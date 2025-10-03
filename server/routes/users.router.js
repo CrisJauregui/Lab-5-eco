@@ -9,10 +9,8 @@ const {
   deleteUserController,
 } = require("../controllers/users.controller");
 
-// GET /users/basic → username y email de todos los usuarios
 router.get("/users/basic", getUsersBasicController);
 
-// Rutas existentes para CRUD de usuarios
 router.get("/users", getAllUsersController);
 router.post("/users", createUserController);
 router.put("/users/:id", updateUserController);

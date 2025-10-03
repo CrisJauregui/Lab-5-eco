@@ -5,8 +5,7 @@ const {
     getProductsPaginated,
     getProductsByUserId,
   } = require("../db/products.db");
-  
-  // GET /products → traer todos los productos
+
   const getAllProductsController = async (req, res) => {
     try {
       const products = await getAllProducts();
@@ -16,7 +15,6 @@ const {
     }
   };
   
-  // GET /products/cheap → productos con price < 50
   const getCheapProductsController = async (req, res) => {
     try {
       const products = await getCheapProducts();
@@ -25,8 +23,7 @@ const {
       res.status(500).json({ error: error.message });
     }
   };
-  
-  // GET /products/electronics → productos con price > 30 y categoría = "Electronics"
+
   const getElectronicsProductsController = async (req, res) => {
     try {
       const products = await getElectronicsProducts();
@@ -36,7 +33,6 @@ const {
     }
   };
   
-  // GET /products/page/:page → paginación de 10 en 10
   const getProductsPaginatedController = async (req, res) => {
     try {
       const { page } = req.params;
@@ -53,7 +49,6 @@ const {
     }
   };
   
-  // GET /users/:id/products → productos asociados a un usuario específico
   const getProductsByUserIdController = async (req, res) => {
     try {
       const { id } = req.params;

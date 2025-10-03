@@ -1,6 +1,5 @@
 const { searchPostsByTitle } = require("../db/posts.db");
 
-// GET /posts/search?title=tutorial → posts cuyo title contenga "tutorial"
 const searchPostsByTitleController = async (req, res) => {
   try {
     const { title } = req.query;

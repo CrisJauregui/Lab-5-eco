@@ -6,7 +6,6 @@ const {
   deleteUserInDb,
 } = require("../db/users.db");
 
-// GET /users/basic → username y email de todos los usuarios
 const getUsersBasicController = async (req, res) => {
   try {
     const users = await getUsersBasic();
@@ -16,7 +15,6 @@ const getUsersBasicController = async (req, res) => {
   }
 };
 
-// Función existente para traer todos los usuarios
 const getAllUsersController = async (req, res) => {
   try {
     const users = await getAllUsers();
@@ -26,7 +24,6 @@ const getAllUsersController = async (req, res) => {
   }
 };
 
-// Función existente para crear usuario
 const createUserController = async (req, res) => {
   try {
     const { name, username, email } = req.body;
@@ -43,7 +40,6 @@ const createUserController = async (req, res) => {
   }
 };
 
-// Función existente para actualizar usuario
 const updateUserController = async (req, res) => {
   try {
     const { id } = req.params;
@@ -61,7 +57,6 @@ const updateUserController = async (req, res) => {
   }
 };
 
-// Función existente para eliminar usuario
 const deleteUserController = async (req, res) => {
   try {
     const { id } = req.params;
