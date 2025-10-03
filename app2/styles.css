@@ -1,0 +1,591 @@
+/* Base + Theme */
+
+/* Import a modern, readable font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --indigo: #6366f1;
+  --pink: #ec4899;
+  --text-on-dark: #ffffff;
+  --glass: rgba(255, 255, 255, 0.15);
+  --glass-strong: rgba(255, 255, 255, 0.25);
+  --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(99, 102, 241, 0.2), transparent 50%),
+              radial-gradient(1200px 600px at 80% 100%, rgba(236, 72, 153, 0.18), transparent 50%),
+              linear-gradient(180deg, #0b1020, #0f172a 40%, #0b1020);
+  color: var(--text-on-dark);
+}
+
+#app {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+}
+
+h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* Card containers (screens) */
+#screen1,
+#screen2 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* screen1.css */
+
+#screen1 {
+  animation: slideInFromLeft 0.6s ease-out;
+  background: #6366f1;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#screen1::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#screen1 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  animation: fadeIn 1s ease-out 0.3s;
+  animation-fill-mode: both;
+  position: relative;
+  z-index: 1;
+}
+
+#screen1 p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-out 0.6s;
+  animation-fill-mode: both;
+  position: relative;
+  z-index: 1;
+}
+
+#screen1 button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #6366f1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-out 0.9s;
+  animation-fill-mode: both;
+}
+
+#screen1 button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: #f0f0ff;
+}
+
+#screen1 button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* screen2.css */
+
+#screen2 {
+  animation: slideInFromRight 0.6s ease-out;
+  background: #ec4899;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#screen2::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#screen2 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  animation: fadeIn 1s ease-out 0.3s;
+  animation-fill-mode: both;
+  position: relative;
+  z-index: 1;
+}
+
+#screen2 p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-out 0.6s;
+  animation-fill-mode: both;
+  position: relative;
+  z-index: 1;
+}
+
+#go-screen-back {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out 0.9s;
+  animation-fill-mode: both;
+  position: relative;
+  z-index: 1;
+}
+
+#go-screen-back:hover {
+  background-color: #ffffff;
+  color: #ec4899;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#go-screen-back:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para Inputs Modernos */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Inputs en fondos claros (opcional) */
+.light-input input[type="text"],
+.light-input input[type="email"],
+.light-input input[type="password"],
+.light-input input[type="number"],
+.light-input input[type="tel"],
+.light-input input[type="url"],
+.light-input textarea,
+.light-input select {
+  background-color: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  color: #333;
+}
+
+.light-input input::placeholder,
+.light-input textarea::placeholder {
+  color: #999;
+}
+
+.light-input input:focus,
+.light-input textarea:focus,
+.light-input select:focus {
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1), 0 0 0 4px rgba(99, 102, 241, 0.05);
+}
+
+/* Labels para inputs */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.light-input label {
+  color: #333;
+}
+
+/* Contenedor de form field */
+.form-field {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Checkboxes y Radio buttons estilizados */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ffffff;
+}
+
+.light-input input[type="checkbox"],
+.light-input input[type="radio"] {
+  accent-color: #6366f1;
+}
+
+/* Estilos para botones de consulta/operaciones */
+.query-button,
+.operation-button,
+button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #6366f1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px; /* mismo ancho para todos */
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.query-button:hover,
+.operation-button:hover,
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: #f0f0ff;
+}
+
+.query-button:active,
+.operation-button:active,
+button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de botones en línea horizontal (solo div hijos directos) */
+#screen1 > div,
+#screen2 > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* Área de resultado */
+.result-area,
+#resultado-area {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  min-height: 150px;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* Unificar estilo del pre de resultados si viene inline */
+#result {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  color: #a7f3d0 !important; /* green-200ish */
+  backdrop-filter: blur(10px) !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #screen1,
+  #screen2 {
+    padding: 2rem 1.25rem;
+  }
+
+  #screen1 h2,
+  #screen2 h2 {
+    font-size: 2rem;
+  }
+
+  .query-button,
+  .operation-button,
+  button {
+    min-width: 140px;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  .query-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  #screen1,
+  #screen2 {
+    border-radius: 18px;
+    padding: 1.5rem 1rem;
+  }
+
+  #screen1 p,
+  #screen2 p {
+    font-size: 1rem;
+  }
+
+  .input-button-group,
+  .search-group {
+    gap: 0.75rem;
+  }
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+}
+
+/* Input con icono de búsqueda */
+.search-input-wrapper {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.search-input-wrapper input {
+  padding-right: 3rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+/* Grid de botones de consulta */
+.query-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.query-grid .query-button {
+  width: 100%;
+  margin: 0;
+}
+
+/* Estilos forzados para inputs específicos que puedan tener clases diferentes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input.form-control,
+input.input-field,
+.input-wrapper input,
+#screen1 input,
+#screen2 input,
+input {
+  width: 100% !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 1rem !important;
+  font-family: inherit !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 14px !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input.form-control:focus,
+input.input-field:focus,
+.input-wrapper input:focus,
+#screen1 input:focus,
+#screen2 input:focus,
+input:focus {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Asegurar que los placeholders también se vean bien */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+}
+
+/* Contenedor para input + botón en la misma línea */
+.input-button-group,
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.input-button-group input,
+.search-group input {
+  flex: 1;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.input-button-group button,
+.search-group button {
+  flex-shrink: 0;
+  margin: 0 !important;
+  width: 240px; /* ancho consistente para botones junto al input */
+}
